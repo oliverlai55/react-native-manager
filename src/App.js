@@ -30,5 +30,3 @@ class App extends Component {
 }
 
 export default App;
-
-// Provider makes sure the connect and store all connect

@@ -2,6 +2,7 @@ import React from 'react';
 import { Scene, Router } from 'react-native-router-flux';
 import LoginForm from './components/LoginForm';
 import EmployeeList from './components/EmployeeList';
+import EmployeeCreate from './components/EmployeeCreate';
 
 const RouterComponent = () => {
   // key is what's used to navigate to diff components, using Action.(key)
@@ -10,9 +11,16 @@ const RouterComponent = () => {
       <Scene key="auth">
         <Scene key="login" component={LoginForm} title="Please Login" />
       </Scene>
-      
+
       <Scene key="main">
-        <Scene key="employeeList" component={EmployeeList} title="Employees" />
+        <Scene
+          onRight={() => console.log('right')}
+          rightTitle="Add"
+          key="employeeList"
+          component={EmployeeList}
+          title="Employees"
+        />
+        <Scene key="employeeCreate" component={EmployeeCreate} title="Create Employee" />
       </Scene>
     </Router>
   );

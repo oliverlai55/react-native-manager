@@ -2,8 +2,9 @@ import React from 'react';
 import { View } from 'react-native';
 
 const CardSection = (props) => {
+  // Below in the [ ], ReactNative will take the origianl containerStyle, but on the right, if there is another style (props.style), it will override the original style
   return (
-    <View style={styles.containerStyle}>
+    <View style={[styles.containerStyle, props.style]}>
       {props.children}
     </View>
   );

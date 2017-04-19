@@ -8,7 +8,7 @@ class EmployeeCreate extends Component {
   onButtonPress() {
     const { name, phone, shift } = this.props;
 
-    this.props.employeeCreate({ name, phone, shift });
+    this.props.employeeCreate({ name, phone, shift: shift || 'Monday' });
   }
 
   render() {
@@ -72,5 +72,5 @@ const mapStateToProps = (state) => {
 };
 
 export default connect(mapStateToProps, {
-  employeeUpdate, employeeCreate 
+  employeeUpdate, employeeCreate
 })(EmployeeCreate);
